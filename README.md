@@ -1,12 +1,16 @@
-# Kubernetes API Server Template
+# Service Template
 
-> **This is a GitHub template repository.** Click "Use this template" to create a new Kubernetes aggregated API server for your own custom resources.
+> **This is a GitHub template repository.** Click "Use this template" to create
+> a new Kubernetes aggregated API server for your own custom resources.
 
-A production-ready template for building Kubernetes aggregated API servers. This provides all the scaffolding and boilerplate needed to create custom Kubernetes APIs that integrate seamlessly with `kubectl` and the Kubernetes ecosystem.
+A production-ready template for building Kubernetes aggregated API servers. This
+provides all the scaffolding and boilerplate needed to create custom Kubernetes
+APIs that integrate seamlessly with `kubectl` and the Kubernetes ecosystem.
 
 ## What's Included
 
-- **Full API server scaffolding**: Production-ready Kubernetes aggregated API server setup
+- **Full API server scaffolding**: Production-ready Kubernetes aggregated API
+  server setup
 - **Example custom resource**: `ExampleResource` showing best practices
 - **OpenAPI/Swagger integration**: Automatic API documentation generation
 - **Metrics & monitoring**: Prometheus metrics built-in
@@ -14,7 +18,9 @@ A production-ready template for building Kubernetes aggregated API servers. This
 - **Development tooling**: Task-based build system, Docker support
 - **Code generation**: Kubernetes code-gen integration for deepcopy and clients
 
-The template includes a working `ExampleResource` as a concrete example. You'll customize this to create your own resources like `DataProcessing`, `BackupJob`, `AnalyticsQuery`, etc.
+The template includes a working `ExampleResource` as a concrete example. You'll
+customize this to create your own resources like `DataProcessing`, `BackupJob`,
+`AnalyticsQuery`, etc.
 
 ## Using This Template
 
@@ -47,7 +53,8 @@ Edit `pkg/apis/myservice/v1alpha1/types.go`:
 - Rename `ExampleResource` to your resource type
 - Update `ExampleResourceSpec` fields for your use case
 - Update `ExampleResourceStatus` fields for your status
-- Review `genclient` directives for your needs (namespaced vs cluster-scoped, allowed verbs)
+- Review `genclient` directives for your needs (namespaced vs cluster-scoped,
+  allowed verbs)
 
 ### 5. Build & Generate
 
@@ -60,13 +67,16 @@ task test
 
 ### 6. Implement Storage Backend
 
-The main TODO is in `internal/apiserver/apiserver.go` - look for the `TEMPLATE NOTE` comment. You need to:
+The main TODO is in `internal/apiserver/apiserver.go` - look for the `TEMPLATE
+NOTE` comment. You need to:
 - Create a REST storage implementation
 - Connect to your backend (database, API, cache, etc.)
 - Implement CRUD operations
 - Register storage in the apiserver
 
-See the [Kubernetes sample-apiserver](https://github.com/kubernetes/sample-apiserver/tree/master/pkg/registry) for examples.
+See the [Kubernetes
+sample-apiserver](https://github.com/kubernetes/sample-apiserver/tree/master/pkg/registry)
+for examples.
 
 ### 7. Deploy (Optional)
 
@@ -87,7 +97,8 @@ See [config/README.md](config/README.md) for detailed deployment instructions.
 
 ### 8. Clean Up
 
-Search for `TEMPLATE NOTE` comments throughout the codebase and remove them once you've addressed each customization point.
+Search for `TEMPLATE NOTE` comments throughout the codebase and remove them once
+you've addressed each customization point.
 
 ## Prerequisites
 
