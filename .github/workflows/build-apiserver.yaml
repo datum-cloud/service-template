@@ -4,6 +4,11 @@
 # - image-name: Update to your service name
 # - bundle-name: Update to your kustomize bundle name
 # - Uses references: Point to your own reusable workflows or use standard actions
+#
+# The publish jobs below are skipped in the template repository itself. Their
+# image and bundle names are placeholders, so publishing from here either fails
+# or pushes artifacts nobody consumes. They run normally once this repository is
+# generated into a real service and the names below are filled in.
 
 name: Build and Publish Docker Image
 
@@ -21,6 +26,7 @@ jobs:
     # manifests are invalid.
     needs:
       - validate-kustomize
+    if: github.repository != 'datum-cloud/service-template'
     permissions:
       id-token: write
       contents: read
@@ -38,6 +44,7 @@ jobs:
     needs:
       - validate-kustomize
       - publish-container-image
+    if: github.repository != 'datum-cloud/service-template'
     permissions:
       id-token: write
       contents: read
