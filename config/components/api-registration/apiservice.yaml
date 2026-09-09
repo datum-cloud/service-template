@@ -5,7 +5,7 @@ metadata:
 spec:
   service:
     name: example-service-apiserver
-      port: 443
+    port: 443
   group: example.example-org.io
   version: v1alpha1
   insecureSkipTLSVerify: false
