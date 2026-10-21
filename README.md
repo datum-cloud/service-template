@@ -16,6 +16,11 @@ APIs that integrate seamlessly with `kubectl` and the Kubernetes ecosystem.
 - **Metrics & monitoring**: Prometheus metrics built-in
 - **Version management**: Git-based version injection
 - **Development tooling**: Task-based build system, Docker support
+- **Scratch runtime image**: The image holds only the static binary, running
+  as user `65532:65532`. Trusted CA roots come from
+  `golang.org/x/crypto/x509roots/fallback`, imported in `main`, so a root
+  removal arrives as a dependency update. Keep that import, and add
+  `time/tzdata` to `main` if your service loads time zones
 - **Code generation**: Kubernetes code-gen integration for deepcopy and clients
 
 The template includes a working `ExampleResource` as a concrete example. You'll
