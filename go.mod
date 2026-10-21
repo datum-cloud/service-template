@@ -5,6 +5,7 @@ go 1.26.0
 require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/pflag v1.0.9
+	golang.org/x/crypto/x509roots/fallback v0.0.0-20261020153306-9f2b28d4331a
 	k8s.io/apimachinery v0.35.0
 	k8s.io/apiserver v0.34.2
 	k8s.io/component-base v0.34.3
@@ -18,7 +19,6 @@ require (
 	github.com/antlr4-go/antlr/v4 v4.13.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/blang/semver/v4 v4.0.0 // indirect
-	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect

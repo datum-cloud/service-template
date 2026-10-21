@@ -34,7 +34,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
     -a -o example-service ./cmd/example-service
 
 # Runtime stage
-FROM gcr.io/distroless/static:nonroot
+FROM scratch
 
 WORKDIR /
 # TEMPLATE NOTE: Update binary name to match your service

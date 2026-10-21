@@ -21,6 +21,8 @@ import (
 	logsapi "k8s.io/component-base/logs/api/v1"
 	"k8s.io/klog/v2"
 
+	_ "golang.org/x/crypto/x509roots/fallback"
+
 	// Register JSON logging format
 	_ "k8s.io/component-base/logs/json/register"
 )
