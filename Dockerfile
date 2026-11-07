@@ -33,10 +33,15 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
               -X 'github.com/example-org/example-service/internal/version.BuildDate=${BUILD_DATE}'" \
     -a -o example-service ./cmd/example-service
 
+RUN echo 'nonroot:x:65532:65532:nonroot:/home/nonroot:/sbin/nologin' > /workspace/passwd && \
+    echo 'nonroot:x:65532:' > /workspace/group
+
 # Runtime stage
 FROM scratch
 
 WORKDIR /
+COPY --from=builder /workspace/passwd /etc/passwd
+COPY --from=builder /workspace/group /etc/group
 # TEMPLATE NOTE: Update binary name to match your service
 COPY --from=builder /workspace/example-service .
 USER 65532:65532
