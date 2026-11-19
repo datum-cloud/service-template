@@ -1,0 +1,8 @@
+# Code owners for service-template itself.
+#
+# A repository created from this template through the github-org program in
+# datum-cloud/infra gets this file replaced, in the same apply, by one naming
+# the teams it declares as code owners there. Change ownership of a generated
+# repository in that config, not by copying this file.
+
+* @datum-cloud/platform
