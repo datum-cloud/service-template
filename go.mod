@@ -7,7 +7,7 @@ toolchain go1.27.4
 require (
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
-	golang.org/x/crypto/x509roots/fallback v0.0.0-20261103070834-3d426ad4de97
+	golang.org/x/crypto/x509roots/fallback v0.0.0-20261123192653-4dc4fb521066
 	k8s.io/apimachinery v0.37.2
 	k8s.io/apiserver v0.37.2
 	k8s.io/component-base v0.37.2
